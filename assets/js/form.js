@@ -88,3 +88,10 @@ if ( 'complete' === document.readyState ) {
 } else {
 	document.addEventListener( 'DOMContentLoaded', CodeableTestFormsInit );
 }
+
+
+function toggleDropdown() {
+    const dropdown = document.querySelector('.multi-select-dropdown');
+	console.log('hola');
+    dropdown.classList.toggle('open');
+}

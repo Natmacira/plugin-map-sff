@@ -17,69 +17,64 @@ function map_sff_generate_form()
 
 	$html .= '<label>' . esc_html__('Location', 'map-sff') . ': *<br><input class="map-sff-form-field" type="text" name="Location" value="" required></label>';
 
-	$html .= '<p>' . esc_html__('Country', 'map-sff') . ': *</p>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Afghanistan" required>Afghanistan</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Albania">Albania</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Algeria">Algeria</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Andorra">Andorra</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Angola">Angola</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Antigua & Deps">Antigua & Deps</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Argentina">Argentina</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Armenia">Armenia</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Australia">Australia</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Austria">Austria</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Azerbaijan">Azerbaijan</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Bahamas">Bahamas</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Bahrain">Bahrain</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Bangladesh">Bangladesh</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Barbados">Barbados</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Belarus">Belarus</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Belgium">Belgium</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Belize">Belize</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Benin">Benin</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Bhutan">Bhutan</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Bolivia">Bolivia</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Bosnia Herzegovina">Bosnia Herzegovina</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Botswana">Botswana</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Brazil">Brazil</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Brunei">Brunei</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Bulgaria">Bulgaria</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Burkina">Burkina</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Burundi">Burundi</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Cambodia">Cambodia</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Cameroon">Cameroon</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Canada">Canada</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Cape Verde">Cape Verde</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Central African Rep">Central African Rep</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Chad">Chad</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Chile">Chile</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="China">China</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Colombia">Colombia</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Comoros">Comoros</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Congo">Congo</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Congo {Democratic Rep}">Congo {Democratic Rep}</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Costa Rica">Costa Rica</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Croatia">Croatia</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Cuba">Cuba</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Cyprus">Cyprus</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Czech Republic">Czech Republic</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Denmark">Denmark</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Djibouti">Djibouti</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Dominica">Dominica</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Dominican Republic">Dominican Republic</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="East Timor">East Timor</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Ecuador">Ecuador</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Egypt">Egypt</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="El Salvador">El Salvador</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Equatorial Guinea">Equatorial Guinea</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Eritrea">Eritrea</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Estonia">Estonia</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Ethiopia">Ethiopia</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Fiji">Fiji</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="Finland">Finland</label>';
-	$html .= '<label><input class="map-sff-form-field" type="checkbox" name="country[]" value="France">France</label>';
-
-
+	$html .= '<p>' . esc_html__( 'Country', 'map-sff' ) . ': *</p>';
+	$html .= '<div class="multi-select-dropdown">';
+	$html .= '<button type="button" onclick="toggleDropdown()">Select Countries</button>';
+	$html .= '<div class="dropdown-options">';
+	
+	// Lista de países
+	$countries = [
+		'Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua & Deps', 
+		'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas',
+		'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 
+		'Benin', 'Bhutan', 'Bolivia', 'Bosnia Herzegovina', 'Botswana', 'Brazil', 
+		'Brunei', 'Bulgaria', 'Burkina', 'Burundi', 'Cambodia', 'Cameroon', 'Canada', 
+		'Cape Verde', 'Central African Rep', 'Chad', 'Chile', 'China',
+    	'Colombia', 'Comoros', 'Congo', 'Congo {Democratic Rep}', 'Costa Rica',
+    	'Croatia', 'Cuba', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti',
+    	'Dominica', 'Dominican Republic', 'East Timor', 'Ecuador', 'Egypt',
+    	'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia',
+		'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Greece', 'Grenada',
+    	'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Honduras',
+    	'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq',
+    	'Ireland {Republic}', 'Israel', 'Italy', 'Ivory Coast', 'Jamaica',
+    	'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Korea North',
+    	'Fiji', 'Finland', 'France', 'Gabon', 'Gambia', 'Georgia', 'Germany', 
+		'Ghana', 'Greece', 'Grenada',
+    	'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Honduras',
+    	'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq',
+    	'Ireland {Republic}', 'Israel', 'Italy', 'Ivory Coast', 'Jamaica',
+    	'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Korea North', 
+		'Korea South', 'Kosovo', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon',
+		'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg',
+		'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta',
+		'Marshall Islands', 'Mauritania', 'Mauritius', 'Mexico', 'Micronesia',
+		'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Morocco',
+		'Mozambique', 'Myanmar (Burma)', 'Namibia', 'Nauru', 'Nepal', 'Netherlands',
+		'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Norway', 'Oman', 'Pakistan',
+		'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines',
+		'Poland', 'Portugal', 'Qatar', 'Romania', 'Russian Federation', 'Rwanda',
+		'St Kitts & Nevis', 'St Lucia', 'Saint Vincent & the Grenadines', 'Samoa',
+		'San Marino',
+		'Sao Tome & Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 
+		'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon Islands',
+		'Somalia', 'South Africa', 'South Sudan', 'Spain', 'Sri Lanka', 'Sudan', 
+		'Suriname', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 
+		'Tajikistan', 'Tanzania', 'Thailand', 'Togo', 'Tonga', 'Trinidad & Tobago',
+		'Tunisia', 'Turkey',
+		'Turkmenistan', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates',
+		'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Vanuatu',
+		'Vatican City', 'Venezuela', 'Vietnam', 'Yemen', 'Zambia', 'Zimbabwe'
+	];
+	
+	// Generar los checkboxes dinámicamente
+	foreach ($countries as $country) {
+		$html .= '<label><input type="checkbox" name="country[]" value="' . esc_attr($country) . '">' . esc_html($country) . '</label><br>';
+	}
+	
+	$html .= '</div>'; // Cerrar dropdown-options
+	$html .= '</div>'; // Cerrar multi-select-dropdown
+	
 	$html .= '<label>' . esc_html__('Dirección del espacio cultural', 'map-sff') . ': *<br><textarea class="map-sff-form-field" type="text" name="address" value="" required></textarea></label>';
 
 	$html .= '<p>' . esc_html__('Category', 'map-sff') . ': *</p>';
