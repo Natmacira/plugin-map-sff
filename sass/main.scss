@@ -1,0 +1,27 @@
+/**
+ * Main Styles for theme.
+ */
+
+// sass main.scss ../assets/css/style.min.css --style=compressed
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+$theme-black  : #231f20;
+$theme-pink   : #F776CF;
+$theme-violet : #7F1F72;
+$theme-gray   : #333333;
+$theme-gray-2 : #4F4F4F;
+$theme-gray-3 : #828282;
+$theme-gray-4 : #F2F2F2;
+
+$theme-font-1: 'Millionaire';
+$theme-font-2: 'Montserrat';
+
+$img-directory: "img/";
+
+@import 'normalize';
+@import 'mixins';
+@import 'fonts';
+@import 'skeleton';
+@import 'body-changes';

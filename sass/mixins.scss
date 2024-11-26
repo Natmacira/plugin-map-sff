@@ -1,0 +1,26 @@
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Media queries */
+@mixin media-tablet {
+    @media screen and (min-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin media-desktop {
+    @media screen and (min-width: $breakpoint-desktop) {
+        @content;
+    }
+}
+
+@mixin box-shadow {
+	border-radius: 4px;
+	border: 1px solid #000;
+	background: #FFF;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}

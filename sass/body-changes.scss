@@ -1,0 +1,43 @@
+/**
+ * Styles changed via user interactions.
+ */
+
+body {
+	// &.page-scrolled {
+	// 	padding-top: 60px;
+	// }
+
+	&.filters-open {
+		@media (max-width: $breakpoint-desktop) {
+			overflow: hidden;
+		}
+
+		section.centre-map-container {
+			#map-sff-filters {
+				display: block;
+
+				@media (max-width: $breakpoint-desktop) {
+					position: fixed;
+					background-color: $theme-violet;
+					padding: 45px 16px 16px;
+					top: 0;
+					left: 0;
+					height: 100%;
+					width: 100%;
+					z-index: 10000;
+					overflow: auto;
+				}
+
+				// @include media-desktop {
+				// 	position: static;
+				// 	top: 0;
+				// 	left: 0;
+				// 	height: auto;
+				// 	width: auto;
+				// 	z-index: 10000;
+				// 	overflow: auto;
+				// }
+			}
+		}
+	}
+}
