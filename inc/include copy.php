@@ -403,21 +403,44 @@ function map_sff_ajax_submit_form() {
 			'map_sff_ajax_submit_form'
 		)
 	) {
-		$name          = ( ! empty( $_POST['name_organization'] ) ) ? sanitize_text_field( wp_unslash( $_POST['name_organization'] ) ) : '';
+		$name          = ( ! empty( $_POST['name'] ) ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : '';
 		$description   = ( ! empty( $_POST['description'] ) ) ? sanitize_text_field( wp_unslash( $_POST['description'] ) ) : '';
-		// $location      = ( ! empty( $_POST['location'] ) ) ? sanitize_text_field( wp_unslash( $_POST['location'] ) ) : '';
+		$email         = ( ! empty( $_POST['email'] ) ) ? sanitize_text_field( wp_unslash( $_POST['email'] ) ) : '';
 
-		$country       = ( ! empty( $_POST['country'] ) && is_array( $_POST['country'] ) ) ? array_map( 'sanitize_text_field', $_POST['country'] ) : [];
-		$location       = ( ! empty( $_POST['location'] ) && is_array( $_POST['location'] ) ) ? array_map( 'sanitize_text_field', $_POST['location'] ) : [];
-		
-		$category 	   = ( ! empty( $_POST['category'] ) ) ? sanitize_text_field( wp_unslash( $_POST['category'] ) ) : '';
-		$link          = ( ! empty( $_POST['link'] ) ) ? sanitize_text_field( wp_unslash( $_POST['link'] ) ) : '';
-		$other_link          = ( ! empty( $_POST['other_link'] ) ) ? sanitize_text_field( wp_unslash( $_POST['other_link'] ) ) : '';
+		$physical_space = ( ! empty( $_POST['physical-space'] ) && is_array( $_POST['physical-space'] ) ) ? array_map( 'sanitize_text_field', $_POST['physical-space'] ) : [];
 
+		if ( ! empty( $_POST['physical-space-other'] ) ) {
+			$physical_space[] = sanitize_text_field( wp_unslash( $_POST['physical-space-other'] ) );
+		}
+
+		$cultural_group = ( ! empty( $_POST['cultural-group'] ) && is_array( $_POST['cultural-group'] ) ) ? array_map( 'sanitize_text_field', $_POST['cultural-group'] ) : [];
+
+		if ( ! empty( $_POST['cultural-group-other'] ) ) {
+			$cultural_group[] = sanitize_text_field( wp_unslash( $_POST['cultural-group-other'] ) );
+		}
+
+		$other_projects = ( ! empty( $_POST['other-projects'] ) && is_array( $_POST['other-projects'] ) ) ? array_map( 'sanitize_text_field', $_POST['other-projects'] ) : [];
+
+		if ( ! empty( $_POST['other-projects-other'] ) ) {
+			$other_projects[] = sanitize_text_field( wp_unslash( $_POST['other-projects-other'] ) );
+		}
+
+		$working_hours = ( ! empty( $_POST['working-hours'] ) ) ? sanitize_text_field( wp_unslash( $_POST['working-hours'] ) ) : '';
+		$address       = ( ! empty( $_POST['address'] ) ) ? sanitize_text_field( wp_unslash( $_POST['address'] ) ) : '';
+		$city          = ( ! empty( $_POST['city'] ) ) ? sanitize_text_field( wp_unslash( $_POST['city'] ) ) : '';
+		$province      = ( ! empty( $_POST['province'] ) ) ? sanitize_text_field( wp_unslash( $_POST['province'] ) ) : '';
+		$phone         = ( ! empty( $_POST['phone'] ) ) ? sanitize_text_field( wp_unslash( $_POST['phone'] ) ) : '';
+		$website       = ( ! empty( $_POST['website'] ) ) ? sanitize_text_field( wp_unslash( $_POST['website'] ) ) : '';
+		$facebook      = ( ! empty( $_POST['facebook'] ) ) ? sanitize_text_field( wp_unslash( $_POST['facebook'] ) ) : '';
+		$instagram     = ( ! empty( $_POST['instagram'] ) ) ? sanitize_text_field( wp_unslash( $_POST['instagram'] ) ) : '';
+		$twitter       = ( ! empty( $_POST['twitter'] ) ) ? sanitize_text_field( wp_unslash( $_POST['twitter'] ) ) : '';
+		$youtube       = ( ! empty( $_POST['youtube'] ) ) ? sanitize_text_field( wp_unslash( $_POST['youtube'] ) ) : '';
+		$other_social  = ( ! empty( $_POST['other-social'] ) ) ? sanitize_text_field( wp_unslash( $_POST['other-social'] ) ) : '';
+		$postal_code   = ( ! empty( $_POST['postal-code'] ) ) ? sanitize_text_field( wp_unslash( $_POST['postal-code'] ) ) : '';
 		$latitud       = ( ! empty( $_POST['latitud'] ) ) ? sanitize_text_field( wp_unslash( $_POST['latitud'] ) ) : '';
 		$longitud      = ( ! empty( $_POST['longitud'] ) ) ? sanitize_text_field( wp_unslash( $_POST['longitud'] ) ) : '';
 
-		if ( $name && $description && $location && $country) {
+		if ( $name && $description && $email && $address && $city && $province ) {
 			$response['post_insertion'] = wp_insert_post(
 				array(
 					'post_title'  => $name,
@@ -425,12 +448,22 @@ function map_sff_ajax_submit_form() {
 					'post_status' => 'draft',
 					'meta_input'  => array(
 						'map_sff_meta_box_description'    => $description,
-						// 'map_sff_meta_box_location'       => $location,
-						'map_sff_meta_box_country'        => implode( ',', $country ),
-						'map_sff_meta_box_location'        => implode( ',', $location ),
-						'map_sff_meta_box_category'       => $category,
-						'map_sff_meta_box_link'           => $link,
-						'map_sff_meta_box_other_link'     => $other_link,
+						'map_sff_meta_box_email'          => $email,
+						'map_sff_meta_box_physical_space' => implode( ',', $physical_space ),
+						'map_sff_meta_box_cultural_group' => implode( ',', $cultural_group ),
+						'map_sff_meta_box_other_projects' => implode( ',', $other_projects ),
+						'map_sff_meta_box_working_hours'  => $working_hours,
+						'map_sff_meta_box_address'        => $address,
+						'map_sff_meta_box_city'           => $city,
+						'map_sff_meta_box_province'       => $province,
+						'map_sff_meta_box_phone'          => $phone,
+						'map_sff_meta_box_website'        => $website,
+						'map_sff_meta_box_facebook'       => $facebook,
+						'map_sff_meta_box_instagram'      => $instagram,
+						'map_sff_meta_box_twitter'        => $twitter,
+						'map_sff_meta_box_youtube'        => $youtube,
+						'map_sff_meta_box_other_social'   => $other_social,
+						'map_sff_meta_box_postal_code'    => $postal_code,
 						'map_sff_meta_box_longitud'       => $longitud,
 						'map_sff_meta_box_latitud'        => $latitud,
 					),
@@ -445,14 +478,33 @@ function map_sff_ajax_submit_form() {
 				$error_message .= __( 'La descripción no puede estar vacía.' );
 			}
 
-			if ( empty( $location ) ) {
-				$error_message .= __( 'El location no puede estar vacío.' );
+			if ( empty( $email ) ) {
+				$error_message .= __( 'El email no puede estar vacío.' );
 			}
 
-			if ( empty( $country ) ) {
+			if ( empty( $physical_space ) ) {
 				$error_message .= __( 'El campo tipo de espacio cultural físico no puede estar vacío.' );
 			}
 
+			if ( empty( $cultural_group ) ) {
+				$error_message .= __( 'El campo agrupación cultural no puede estar vacía.' );
+			}
+
+			if ( empty( $other_projects ) ) {
+				$error_message .= __( 'El campo Otros proyectos no pueden estar vacíos.' );
+			}
+
+			if ( empty( $address ) ) {
+				$error_message .= __( 'La dirección no puede estar vacía.' );
+			}
+
+			if ( empty( $city ) ) {
+				$error_message .= __( 'La ciudad no puede estar vacía.' );
+			}
+
+			if ( empty( $province ) ) {
+				$error_message .= __( 'La provincia no puede estar vacía.' );
+			}
 		}
 	}
 
@@ -530,6 +582,7 @@ function map_sff_get_full_entry($form_entry)
 	$full_entry->location          = get_post_meta($form_entry->ID, 'map_sff_meta_box_location', true);
 	$full_entry->tag               = get_post_meta($form_entry->ID, 'map_sff_meta_box_tag', true);
 	$full_entry->description       = get_post_meta($form_entry->ID, 'map_sff_meta_box_description', true);
+	$full_entry->other_projects    = get_post_meta($form_entry->ID, 'map_sff_meta_box_other_projects', true);
 	$full_entry->link              = get_post_meta($form_entry->ID, 'map_sff_meta_box_link', true);
 	$full_entry->other_link        = get_post_meta($form_entry->ID, 'map_sff_meta_box_other_link', true);
 	$full_entry->country           = get_post_meta($form_entry->ID, 'map_sff_meta_box_country', true);
