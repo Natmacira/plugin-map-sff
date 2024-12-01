@@ -326,9 +326,9 @@ section.centre-map-container {
 			}
 
 			p {
-				font-family: $theme-font-1;
+				font-family: $theme-font-2;
 				font-size: 40px;
-				color: $theme-gray-3;
+				color: black;
 				line-height: 1;
 				margin: 0;
 			}
@@ -389,6 +389,9 @@ section.centre-count-container {
 		font-size: 128px;
 		line-height: 1;
 		margin-bottom: 0;
+		color: $theme-green;
+		margin-top: -100px;
+
 	}
 
 	// a.form-link {
@@ -702,3 +705,6 @@ section.centre-map-container form#map-sff-filters label.standalone-input-label {
 
 
 
+// .et_pb_section {
+// 	padding-top: 0 !important;
+// }

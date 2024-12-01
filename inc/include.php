@@ -1094,22 +1094,53 @@ add_shortcode(
 );
 
 // Add a shortcode to display the "mercuria" section
+// add_shortcode(
+// 	'map_sff_mercuria',
+// 	function () {
+// 		$html = '';
+
+// 		$html .= '<section class="mercuria-container card-rounded">';
+
+// 		$html .= '<article>';
+
+// 		$html .= '<h2>¿Que es Mercuria?</h2>';
+
+// 		$html .= '<p>Somos una cooperativa cultural transfeminista con perspectiva federal, conformada por artistas, trabajadorxs y gestorxs de la cultura. Trabajamos para fomentar la expresión de todas las comunidades argentinas, visibilizando proyectos inclusivos y plurales para todes.</p>';
+
+// 		$html .= '</article>';
+
+// 		$html .= '<figure class="image-container"><img src="' . esc_url(get_stylesheet_directory_uri() . '/img/logo-mercuria.png') . '"></figure>';
+
+// 		$html .= '</section>';
+
+// 		return $html;
+// 	}
+// );
+
+
+// Add a shortcode to display the amount of entries.
 add_shortcode(
-	'map_sff_mercuria',
+	'mapa_federal_entries_count',
 	function () {
+		$args = array(
+			'post_type'      => 'our-storys',
+			'posts_per_page' => -1,
+			'post_status'    => array( 'publish' ),
+		);
+
+		$query = new WP_Query( $args );
+
 		$html = '';
 
-		$html .= '<section class="mercuria-container card-rounded">';
+		$html .= '<section class="centre-count-container">';
 
-		$html .= '<article>';
+		$html .= '<p class="centre-count" data-val="' . esc_attr( $query->found_posts ) . '">0</p>';
 
-		$html .= '<h2>¿Que es Mercuria?</h2>';
+		$html .= '<h3>Shared storys</h3>';
 
-		$html .= '<p>Somos una cooperativa cultural transfeminista con perspectiva federal, conformada por artistas, trabajadorxs y gestorxs de la cultura. Trabajamos para fomentar la expresión de todas las comunidades argentinas, visibilizando proyectos inclusivos y plurales para todes.</p>';
+		// $html .= '<a class="button-link form-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdMk_RuMv0kQ_Ddld6wC2UpKrRSQdK0S3aRy0RGA7ykjMM8mQ/viewform" target="_blank">Suma tu espacio</a>';
 
-		$html .= '</article>';
-
-		$html .= '<figure class="image-container"><img src="' . esc_url(get_stylesheet_directory_uri() . '/img/logo-mercuria.png') . '"></figure>';
+		// $html .= '<h4>Carga los datos de tu espacio para que aparezca en el mapa</h4>';
 
 		$html .= '</section>';
 
