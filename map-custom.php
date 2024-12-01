@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Custom Map 
- * Version:     0.2.4
+ * Version:     0.2.5
  * Description: Plugin para mapas
  * Author:      Natalia Ciraolo & Lucía Cáceres 
  * License:     GPL v2 or later
@@ -10,7 +10,7 @@
 
 
 if ( ! defined( 'MAPA_FEDERAL_VERSION' ) ) {
-	define( 'MAPA_FEDERAL_VERSION', '0.2.2' );
+	define( 'MAPA_FEDERAL_VERSION', '0.2.5' );
 }
 
 require plugin_dir_path( __FILE__ ) . '/inc/include.php';
@@ -168,7 +168,27 @@ function map_sff_print_post( $post_id = null, $atts = array() ) {
 		return $html;
 	}
 }
+/**
+ * Returns post excerpt.
+ *
+ * @param WP_Post $post      Post object.
+ * @param int     $num_words Optional. Maximum number of words to return.
+ *                           Default 55.
+ *
+ * @return string Post excerpt.
+ */
+function map_sff_get_excerpt( $post, $num_words = 55 ) {
+	if ( ! empty( $post->post_excerpt ) ) {
+		$excerpt = $post->post_excerpt;
+	} else {
+		$excerpt = strip_shortcodes( $post->post_content );
+		$excerpt = wp_strip_all_tags( $excerpt );
+	}
 
+	$excerpt = wp_trim_words( $excerpt, $num_words );
+
+	return $excerpt;
+}
 /**
  * Prints current post excerpt.
  *

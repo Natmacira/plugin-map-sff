@@ -3,12 +3,15 @@
 /**
  * Shortcode [map_sff_entries_map]
  */
+
+
 section.centre-map-container {
 	width: calc(100% + 40px);
 	margin-left: -20px;
 
 	@include media-tablet {
 		width: 80%;
+		margin: 0;
 		margin-left: 0;
 	}
 
@@ -22,11 +25,11 @@ section.centre-map-container {
 
 		.filter-btn {
 			cursor: pointer;
-			background-color: black;
-			border-color: black;
+			background-color: #124850;
+			border-color: #124850;
 			border-radius: 100px;
 			border: none;
-			color: white;
+			color: #D69B41;
 			display: block;
 			font-family: $theme-font-1;
 			font-size: 20px;

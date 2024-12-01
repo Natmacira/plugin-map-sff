@@ -743,7 +743,7 @@ add_shortcode(
 		$html  = '';
 		$html .= '<section class="centre-map-container">';
 
-		$html .= '<div id="filter-btn-container"><button class="filter-btn">ABRIR FILTROS</button></div>';
+		$html .= '<div id="filter-btn-container"><button class="filter-btn">OPEN FILTERS</button></div>';
 
 		$html .= '<form id="map-sff-filters">';
 		$html .= '<img src="' . esc_url(get_stylesheet_directory_uri() . '/img/close.svg') . '" class="close-img">';
