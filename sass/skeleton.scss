@@ -345,6 +345,11 @@ section.centre-map-container {
 			color: #000;
 			margin-bottom: 16px;
 
+			p.location-popup {
+				padding-bottom: 0;
+				margin-bottom: 0;
+			}
+
 			h4,
 			p {
 				margin: 0;
@@ -376,8 +381,10 @@ section.centre-map-container {
 			}
 
 			a {
-				color: #007aff;
+				color: #3c63fd;
 				word-break: break-all;
+				font-weight: 400;
+				text-decoration: underline;
 			}
 		}
 	}

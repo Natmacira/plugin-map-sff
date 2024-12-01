@@ -118,10 +118,16 @@ document.addEventListener('DOMContentLoaded', function () {
 	
 		}
 
+		if (centre.description) {
+			centreDescription = document.createElement('p');
+			centreDescription.innerText = 'Description: ' + centre.description;
+		}
+
 		if (centre.location) {
 			if (centre.location.indexOf('No es un espacio') === -1) {
-				centrelocationSpace = document.createElement('span');
-				centrelocationSpace.innerText = centre.location;
+				centrelocationSpace = document.createElement('p');
+				centrelocationSpace.innerText = 'Location: ' + centre.location;
+				centrelocationSpace.classList.add('location-popup');
 			}
 		}
 
@@ -142,17 +148,14 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 
 
-		if (centre.description) {
-			centreDescription = document.createElement('p');
-			centreDescription.innerText = 'Description: ' + centre.description;
-		}
+		
 
 		// use marker.bindPopup to add the popup to the marker with the outerHTML of the elements that are not null
 		marker.bindPopup(
 			(centreTitle ? centreTitle.outerHTML : '') +
+			(centreDescription ? centreDescription.outerHTML : '') +
 			(centrelocationSpace ? centrelocationSpace.outerHTML : '') +
 			(centreCountry ? centreCountry.outerHTML : '') +
-			(centreDescription ? centreDescription.outerHTML : '') +
 			(centreLink ? centreLink.outerHTML : '') +
 			(centreOtherLink ? centreOtherLink.outerHTML : '') 
 			
@@ -167,10 +170,10 @@ document.addEventListener('DOMContentLoaded', function () {
 				var article = document.createElement('article');
 
 				article.innerHTML +=
-					(centreTitle ? centreTitle.outerHTML : '') +
+				(centreTitle ? centreTitle.outerHTML : '') +
+				(centreDescription ? centreDescription.outerHTML : '') +
 					(centrelocationSpace ? centrelocationSpace.outerHTML : '') +
 					(centreCountry ? centreCountry.outerHTML : '') +
-					(centreDescription ? centreDescription.outerHTML : '') +
 					(centreLink ? centreLink.outerHTML : '') +
 					(centreOtherLink ? centreOtherLink.outerHTML : '') 
 				
