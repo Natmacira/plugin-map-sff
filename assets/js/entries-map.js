@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				}
 			} else {
 				hintElement.classList.add('empty');
-				hintElement.innerHTML = '<p>No se encontraron resultados.</p>';
+				hintElement.innerHTML = '<p>No results were found.</p>';
 			}
 		};
 

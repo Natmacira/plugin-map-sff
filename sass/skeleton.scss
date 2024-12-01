@@ -162,9 +162,9 @@ section.centre-map-container {
 		}
 
 		div#details-container {
-			background-color: $theme-gray-4;
+			background-color: white;
 			font-size: 16px;
-			color: $theme-gray;
+			color: black;
 			line-height: 1.5;
 			padding: 16px;
 			border-radius: 4px;
@@ -184,11 +184,20 @@ section.centre-map-container {
 				margin-bottom: 8px;
 			}
 
+			p {
+				font-family: $theme-font-2;
+				margin-bottom: 8px;
+			}
+
 			summary {
-				font-family: $theme-font-1;
-				font-size: 20px;
+				font-family: $theme-font-2;
+				font-size: 16px;
 				margin-bottom: 8px;
 				cursor: pointer;
+
+				&::marker {
+					color: $theme-light-green;
+				}
 
 				&:focus {
 					outline: none;
@@ -239,7 +248,7 @@ section.centre-map-container {
 			input {
 				border: none;
 				background: none;
-				border-bottom: solid 1px $theme-gray-3;
+				border-bottom: solid 1px $theme-yellow;
 
 				@include media-desktop {
 					width: 120px;
@@ -249,11 +258,11 @@ section.centre-map-container {
 
 		button#load-map,
 		button#clear-filters {
-			background-color: black;
+			background-color: $theme-green;
 			border-radius: 100px;
-			border: 1px solid #000;
+			border: 1px solid $theme-green;
 			border: none;
-			color: white;
+			color: $theme-yellow;
 			cursor: pointer;
 			display: block;
 			font-family: $theme-font-1;
@@ -261,12 +270,12 @@ section.centre-map-container {
 			padding: 16px 0;
 			text-align: center;
 			width: 100%;
-			border: solid black 2px;
+			border: solid $theme-green 2px;
 			margin-top: 8px;
 
 			&:hover {
-				background: #fff;
-				color: #000;
+				background: $theme-yellow;
+				color: $theme-green;
 			}
 
 			@include media-desktop {
@@ -684,6 +693,11 @@ section.what-is-it-container {
 			right: 0;
 		}
 	}
+}
+
+section.centre-map-container form#map-sff-filters label.standalone-input-label {
+	color: black;
+	font-family: $theme-font-2;
 }
 
 

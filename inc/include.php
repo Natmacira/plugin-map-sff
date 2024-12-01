@@ -746,10 +746,10 @@ add_shortcode(
 		$html .= '<div id="filter-btn-container"><button class="filter-btn">OPEN FILTERS</button></div>';
 
 		$html .= '<form id="map-sff-filters">';
-		$html .= '<img src="' . esc_url(get_stylesheet_directory_uri() . '/img/close.svg') . '" class="close-img">';
+		$html .= '<img src="' . esc_url(plugins_url('img/close.png', __FILE__)) . '" class="close-img" alt="X">';
 
 		$html .= '<div id="details-container">';
-		$html .= '<p>Please choose Location and Country</p>';
+		$html .= '<p>Select the country or location to read about Our Stories of Resistance And Strategies for Change</p>';
 		$html .= '<details><summary>Country</summary>';
 		$html .= '<label><input class="map-sff-filter" type="checkbox" name="country[]" value="Afghanistan">Afghanistan</label>';
 		$html .= '<label><input class="map-sff-filter" type="checkbox" name="country[]" value="Albania">Albania</label>';
@@ -961,16 +961,16 @@ add_shortcode(
 		$html .= '</details>';
 		$html .= '</div>';
 
-		$html .= '<label class="standalone-input-label">Por nombre: ';
-		$html .= '<input class="map-sff-filter" type="text" name="keyword">';
+		$html .= '<label class="standalone-input-label">Name of the story: ';
+		$html .= '<input class="map-sff-filter" type="text" name="keyword" placeholder="Write the name">';
 		$html .= '</label>';
 
-		$html .= '<button id="clear-filters" type="button">Limpiar Filtros</button>';
-		$html .= '<button id="load-map">Aplicar Filtros</button>';
+		$html .= '<button id="clear-filters" type="button">Reset Filters</button>';
+		$html .= '<button id="load-map">Search</button>';
 		$html .= '</form>';
 
 		$html .= '<div id="map"></div>';
-		$html .= '<div id="hint" class="empty"><p>Usa los filtros para buscar los proyectos</p></div>';
+		$html .= '<div id="hint" class="empty"><p>Use the filters to search for projects.</p></div>';
 		$html .= '</section>';
 		$html .= wp_nonce_field('map_sff_ajax_get_entries_map', 'map_sff_get_entries_map_nonce', true, false);
 		$html .= '<input type="hidden" id="map-sff-endpoint" value="' . esc_attr(admin_url('admin-ajax.php')) . '">';
