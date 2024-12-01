@@ -10,21 +10,23 @@ function map_sff_generate_form()
 {
 	$html  = '<form class="map-sff-ajax-form" method="post" action="' . esc_attr(admin_url('admin-ajax.php')) . '">';
 	$html .= wp_nonce_field('map_sff_ajax_submit_form', 'map_sff_submit_form_nonce', true, false);
+	$html .= '<h1>' . esc_html__('Share Your Story', 'map-sff') . '</h1>';
+	$html .= '<p class="info-share">' . esc_html__('Your contribution helps highlight movements of resistance and change. By sharing your story, you amplify voices, inspire action, and strengthen the network of collective struggle.', 'map-sff') . '</p>';
 
 	$html .= '<label>' . esc_html__('Name of the movement/group/ organisation', 'map-sff') . ': *<br><input class="map-sff-form-field" type="text" name="name_organization" value="" required></label>';
 
 	$html .= '<label>' . esc_html__('Description', 'map-sff') . ': *<br><textarea class="map-sff-form-field" type="text" name="description" value="" required></textarea></label>';
 
 	$html .= '<p>' . esc_html__('Location', 'map-sff') . ': *</p>';
-	$html .= '<label><input class="map-sff-form-field" type="radio" name="location[]" value="Local" required>Local</label>';
-	$html .= '<label><input class="map-sff-form-field" type="radio" name="location[]" value="National">National</label>';
-	$html .= '<label><input class="map-sff-form-field" type="radio" name="location[]" value="Transnational">Transnational</label>';
-	$html .= '<label><input class="map-sff-form-field" type="radio" name="location[]" value="Regional">Regional</label>';
+	$html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="location[]" value="Local" required>Local</label>';
+	$html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="location[]" value="National">National</label>';
+	$html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="location[]" value="Transnational">Transnational</label>';
+	$html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="location[]" value="Regional">Regional</label>';
 
 
-	$html .= '<p>' . esc_html__( 'Country', 'map-sff' ) . ': *</p>';
+	$html .= '<p class="inline">' . esc_html__( 'Country', 'map-sff' ) . ': *</p>';
 	$html .= '<div class="multi-select-dropdown">';
-	$html .= '<button type="button" onclick="toggleDropdown()">Select Countries</button>';
+	$html .= '<button type="button" onclick="toggleDropdown()">Select Countries ▼</button>';
 	$html .= '<div class="dropdown-options">';
 	
 	// Lista de países
@@ -82,9 +84,9 @@ function map_sff_generate_form()
 	
 	
 	$html .= '<p>' . esc_html__('Category', 'map-sff') . ': *</p>';
-	$html .= '<label><input class="map-sff-form-field" type="radio" name="category[]" value="Resistance" required>Resistance</label>';
-	$html .= '<label><input class="map-sff-form-field" type="radio" name="category[]" value="Refusal">Refusal</label>';
-	$html .= '<label><input class="map-sff-form-field" type="radio" name="category[]" value="Both">Both</label>';
+	$html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="category[]" value="Resistance" required>Resistance</label>';
+	$html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="category[]" value="Refusal">Refusal</label>';
+	$html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="category[]" value="Both">Both</label>';
 	// $html .= '<label>' . esc_html__( 'Otros', 'map-sff' ) . ': *<br><textarea class="map-sff-form-field" type="text" name="physical-space-other" value="" required></textarea></label>';
 	
 	$html .= '<label>' . esc_html__('Link to external source I', 'map-sff') . ': *<br><textarea class="map-sff-form-field" type="text" name="link" value="" required></textarea></label>';
@@ -96,7 +98,7 @@ function map_sff_generate_form()
 	$html .= '<label>' . esc_html__('Latitud', 'map-sff') . ': <br><textarea class="map-sff-form-field" type="text" name="latitud" value=""></textarea></label>';
 
 
-	$html .= '<input type="submit" value="' . esc_html__('Enviar', 'map-sff') . '" />';
+	$html .= '<input type="submit" value="' . esc_html__('Send', 'map-sff') . '" />';
 	$html .= '<p class="map-sff-response-message"></p>';
 	$html .= '</form>';
 
