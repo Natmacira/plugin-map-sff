@@ -1,22 +1,20 @@
-
-
 /**
  * Shortcode [map_sff_entries_map]
  */
-
 
 section.centre-map-container {
 	width: calc(100% + 40px);
 	margin-left: -20px;
 
 	@include media-tablet {
-		width: 80%;
-		margin: 0;
+		width: 100%;
 		margin-left: 0;
 	}
 
 	@include media-desktop {
 		position: relative;
+		max-width: calc(100vw - 500px);
+		margin: 0 auto;
 	}
 
 	#filter-btn-container {
@@ -29,7 +27,7 @@ section.centre-map-container {
 			border-color: #124850;
 			border-radius: 100px;
 			border: none;
-			color: #D69B41;
+			color: #d69b41;
 			display: block;
 			font-family: $theme-font-1;
 			font-size: 20px;
@@ -63,24 +61,29 @@ section.centre-map-container {
 		&.leaflet-container div.leaflet-popup a.leaflet-popup-close-button {
 			font-size: 25px;
 			top: 10px;
-			right: 15px;
+			right: 8px;
 			width: 24px;
 			height: 24px;
 		}
 
 		div.leaflet-popup-content-wrapper {
 			color: black;
+			max-width: calc(100vw - 80px);
 
 			div.leaflet-popup-content {
 				h4,
 				p {
 					margin: 0;
+					max-height: 300px;
+					overflow-y: auto;
+					overflow-x: hidden;
 				}
 
 				h4 {
 					font-size: 32px;
 					line-height: 1;
 					color: #000;
+					padding-right: 12px;
 				}
 
 				span,
@@ -142,7 +145,7 @@ section.centre-map-container {
 			display: block;
 			position: absolute;
 			top: 0;
-			left: 0;
+			left: -200px;
 			height: 100%;
 			width: 264px;
 			padding: 12px;
@@ -169,12 +172,16 @@ section.centre-map-container {
 			padding: 16px;
 			border-radius: 4px;
 
+			details:nth-child(4) {
+				display: none;
+			}
+
 			@include media-desktop {
 				overflow: auto;
 				position: absolute;
 				top: 12px;
 				left: 12px;
-				height: calc(100% - 24px - 8px - 40px - 8px - 44px - 44px);
+				height: calc(90% - 24px - 8px - 40px - 8px - 44px - 44px);
 				width: 240px;
 				background-color: white;
 				padding: 16px;
@@ -230,7 +237,7 @@ section.centre-map-container {
 
 			@include media-desktop {
 				position: absolute;
-				top: calc(100% - 12px - 8px - 40px - 44px - 44px);
+				top: calc(90% - 12px - 8px - 40px - 44px - 44px);
 				left: 12px;
 				background-color: white;
 				padding: 8px;
@@ -311,7 +318,7 @@ section.centre-map-container {
 			position: absolute;
 			height: calc(100% - 24px);
 			top: 0;
-			right: 0;
+			right: -200px;
 			width: 286px;
 			margin: 12px;
 			padding: 12px;
@@ -344,7 +351,7 @@ section.centre-map-container {
 			}
 
 			h4 {
-				font-size: 32px;
+				font-size: 25px;
 				line-height: 1;
 				color: #000;
 			}
@@ -374,10 +381,7 @@ section.centre-map-container {
 			}
 		}
 	}
-
-
 }
-
 
 /**
  * Shortcode [map_sff_entries_count]
@@ -391,7 +395,6 @@ section.centre-count-container {
 		margin-bottom: 0;
 		color: $theme-green;
 		margin-top: -100px;
-
 	}
 
 	// a.form-link {
@@ -702,8 +705,6 @@ section.centre-map-container form#map-sff-filters label.standalone-input-label {
 	color: black;
 	font-family: $theme-font-2;
 }
-
-
 
 // .et_pb_section {
 // 	padding-top: 0 !important;

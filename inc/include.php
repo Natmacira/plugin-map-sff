@@ -110,7 +110,7 @@ function map_sff_post_type_registration()
 	register_post_type(
 		'our-storys',
 		array(
-			'label'                => __('Our Stories', 'map-sff'),
+			'label'                => __('Map Stories', 'map-sff'),
 			'show_ui'              => true,
 			'public'               => true,
 			'has_archive'          => true,
@@ -746,7 +746,7 @@ add_shortcode(
 		$html .= '<div id="filter-btn-container"><button class="filter-btn">OPEN FILTERS</button></div>';
 
 		$html .= '<form id="map-sff-filters">';
-		$html .= '<img src="' . esc_url(plugins_url('img/close.png', __FILE__)) . '" class="close-img" alt="X">';
+		$html .= '<img src="' . esc_url(plugins_url('../img/close.png', __FILE__)) . '" class="close-img" alt="X">';
 
 		$html .= '<div id="details-container">';
 		$html .= '<p>Select the country or location to read about Our Stories of Resistance And Strategies for Change</p>';
@@ -1136,7 +1136,7 @@ add_shortcode(
 
 		$html .= '<p class="centre-count" data-val="' . esc_attr( $query->found_posts ) . '">0</p>';
 
-		$html .= '<h3>Shared storys</h3>';
+		$html .= '<h3>Shared stories</h3>';
 
 		// $html .= '<a class="button-link form-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdMk_RuMv0kQ_Ddld6wC2UpKrRSQdK0S3aRy0RGA7ykjMM8mQ/viewform" target="_blank">Suma tu espacio</a>';
 
