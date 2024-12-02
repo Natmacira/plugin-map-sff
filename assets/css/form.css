@@ -84,19 +84,25 @@
 	margin: 20px auto;
 }
 
-.multi-select-dropdown {
-	position: relative;
-	display: inline-block;
-}
-
-.multi-select-dropdown input[type="checkbox"] {
-	margin-right: 8px;
+.form-radio-container {
+	width: 200px;
 }
 
 /* Estilo del menú desplegable */
-.dropdown-options {
-	display: none;
-	position: absolute;
+details.countries-dropdown-container {
+	margin: 20px auto;
+	color: black;
+}
+
+.countries-dropdown-container summary {
+	cursor: pointer;
+}
+
+.countries-dropdown-container[open] summary {
+	margin-bottom: 10px;
+}
+
+.countries-dropdown-container .dropdown-options {
 	background-color: #f9f9f9;
 	border: 1px solid #ccc;
 	z-index: 1;
@@ -106,8 +112,8 @@
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.multi-select-dropdown.open .dropdown-options {
-	display: block;
+.countries-dropdown-container .dropdown-options label {
+	margin-bottom: 0;
 }
 
 .map-sff-ajax-form {
@@ -148,4 +154,29 @@
 		font-size: 24px;
 
 	}
+}
+
+.gps-fields-container label input {
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+	.gps-fields-container {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.gps-fields-container label input {
+		width: 255px;
+	}
+
+	.gps-fields-container label {
+		width: 50%;
+		text-align: center;
+	}
+}
+
+.coordinates-hint {
+	color: #AC272B;
+	font-weight: 700;
 }

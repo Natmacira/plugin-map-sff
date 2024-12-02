@@ -17,86 +17,77 @@ function map_sff_generate_form()
 
 	$html .= '<label>' . esc_html__('Description', 'map-sff') . ': *<br><textarea class="map-sff-form-field" type="text" name="description" value="" required></textarea></label>';
 
-	$html .= '<p>' . esc_html__('Location', 'map-sff') . ': *</p>';
+	$html .= '<h3>' . esc_html__('Location', 'map-sff') . ': *</h3>';
+	$html .= '<div class="form-radio-container">';
 	$html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="location[]" value="Local" required>Local</label>';
 	$html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="location[]" value="National">National</label>';
 	$html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="location[]" value="Transnational">Transnational</label>';
 	$html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="location[]" value="Regional">Regional</label>';
+	$html .= '</div>';
 
-
-	$html .= '<p class="inline">' . esc_html__( 'Country', 'map-sff' ) . ': *</p>';
-	$html .= '<div class="multi-select-dropdown">';
-	$html .= '<button type="button" onclick="toggleDropdown()">Select Countries ▼</button>';
-	$html .= '<div class="dropdown-options">';
+	$html .= '<h3 class="inline">' . esc_html__( 'Country', 'map-sff' ) . ': *</h3>';
 	
 	// Lista de países
 	$countries = [
-		'Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua & Deps', 
-		'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas',
-		'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 
-		'Benin', 'Bhutan', 'Bolivia', 'Bosnia Herzegovina', 'Botswana', 'Brazil', 
-		'Brunei', 'Bulgaria', 'Burkina', 'Burundi', 'Cambodia', 'Cameroon', 'Canada', 
-		'Cape Verde', 'Central African Rep', 'Chad', 'Chile', 'China',
-    	'Colombia', 'Comoros', 'Congo', 'Congo {Democratic Rep}', 'Costa Rica',
-    	'Croatia', 'Cuba', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti',
-    	'Dominica', 'Dominican Republic', 'East Timor', 'Ecuador', 'Egypt',
-    	'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia',
-		'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Greece', 'Grenada',
-    	'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Honduras',
-    	'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq',
-    	'Ireland {Republic}', 'Israel', 'Italy', 'Ivory Coast', 'Jamaica',
-    	'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Korea North',
-    	'Fiji', 'Finland', 'France', 'Gabon', 'Gambia', 'Georgia', 'Germany', 
-		'Ghana', 'Greece', 'Grenada',
-    	'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Honduras',
-    	'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq',
-    	'Ireland {Republic}', 'Israel', 'Italy', 'Ivory Coast', 'Jamaica',
-    	'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Korea North', 
-		'Korea South', 'Kosovo', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon',
-		'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg',
-		'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta',
-		'Marshall Islands', 'Mauritania', 'Mauritius', 'Mexico', 'Micronesia',
-		'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Morocco',
-		'Mozambique', 'Myanmar (Burma)', 'Namibia', 'Nauru', 'Nepal', 'Netherlands',
-		'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Norway', 'Oman', 'Pakistan',
-		'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines',
-		'Poland', 'Portugal', 'Qatar', 'Romania', 'Russian Federation', 'Rwanda',
-		'St Kitts & Nevis', 'St Lucia', 'Saint Vincent & the Grenadines', 'Samoa',
-		'San Marino',
-		'Sao Tome & Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 
-		'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon Islands',
-		'Somalia', 'South Africa', 'South Sudan', 'Spain', 'Sri Lanka', 'Sudan', 
-		'Suriname', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 
-		'Tajikistan', 'Tanzania', 'Thailand', 'Togo', 'Tonga', 'Trinidad & Tobago',
-		'Tunisia', 'Turkey',
-		'Turkmenistan', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates',
-		'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Vanuatu',
-		'Vatican City', 'Venezuela', 'Vietnam', 'Yemen', 'Zambia', 'Zimbabwe'
+		'Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua & Deps', 'Argentina', 'Armenia', 
+		'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium',
+		'Belize', 'Benin', 'Bhutan', 'Bolivia', 'Bosnia Herzegovina', 'Botswana', 'Brazil', 'Brunei', 'Bulgaria',
+		'Burkina', 'Burundi', 'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Central African Rep', 'Chad', 'Chile',
+		'China', 'Colombia', 'Comoros', 'Congo', 'Congo {Democratic Rep}', 'Costa Rica', 'Croatia', 'Cuba', 'Cyprus',
+		'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'East Timor', 'Ecuador', 'Egypt',
+    	'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Gabon', 'Gambia', 'Georgia', 'Germany',
+		'Ghana', 'Greece', 'Grenada', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Honduras', 'Hungary',
+		'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland {Republic}', 'Israel', 'Italy', 'Ivory Coast',
+		'Jamaica', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Korea North', 'Fiji', 'Finland', 'France',
+		'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Greece', 'Grenada', 'Guatemala', 'Guinea', 'Guinea-Bissau',
+		'Guyana', 'Haiti', 'Honduras', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 
+		'Ireland {Republic}', 'Israel', 'Italy', 'Ivory Coast', 'Jamaica', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya',
+		'Kiribati', 'Korea North', 'Korea South', 'Kosovo', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 
+		'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macedonia', 'Madagascar', 'Malawi',
+		'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Mauritania', 'Mauritius', 'Mexico', 'Micronesia',
+		'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Morocco', 'Mozambique', 'Myanmar (Burma)', 'Namibia', 'Nauru',
+		'Nepal', 'Netherlands', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Norway', 'Oman', 'Pakistan', 'Palau',
+		'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Qatar', 'Romania',
+		'Russian Federation', 'Rwanda', 'St Kitts & Nevis', 'St Lucia', 'Saint Vincent & the Grenadines', 'Samoa',
+		'San Marino', 'Sao Tome & Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone',
+		'Singapore', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'South Sudan', 'Spain',
+		'Sri Lanka', 'Sudan', 'Suriname', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan',
+		'Tanzania', 'Thailand', 'Togo', 'Tonga', 'Trinidad & Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Tuvalu',
+		'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan',
+		'Vanuatu', 'Vatican City', 'Venezuela', 'Vietnam', 'Yemen', 'Zambia', 'Zimbabwe'
 	];
 	
-	// Generar los checkboxes dinámicamente
-	foreach ($countries as $country) {
-		$html .= '<label><input type="checkbox" name="country[]" value="' . esc_attr($country) . '">' . esc_html($country) . '</label><br>';
+	$html .= '<details class="countries-dropdown-container">';
+	$html .= '<summary>Select Countries</summary>';
+	
+	$html .= '<div class="dropdown-options">';
+	foreach ( $countries as $country ) {
+		$html .= '<label><input type="checkbox" name="country[]" value="' . esc_attr($country) . '">' . esc_html($country) . '</label>';
 	}
 	
-	$html .= '</div>'; // Cerrar dropdown-options
-	$html .= '</div>'; // Cerrar multi-select-dropdown
-	
-	
-	$html .= '<p>' . esc_html__('Category', 'map-sff') . ': *</p>';
+	$html .= '</div>';  
+	$html .= '</details>';
+
+	$html .= '<h3>' . esc_html__('Category', 'map-sff') . ': *</h3>';
+	$html .= '<div class="form-radio-container">';
 	$html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="category[]" value="Resistance" required>Resistance</label>';
 	$html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="category[]" value="Refusal">Refusal</label>';
 	$html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="category[]" value="Both">Both</label>';
-	// $html .= '<label>' . esc_html__( 'Otros', 'map-sff' ) . ': *<br><textarea class="map-sff-form-field" type="text" name="physical-space-other" value="" required></textarea></label>';
+	$html .= '</div>';
 	
-	$html .= '<label>' . esc_html__('Link to external source I', 'map-sff') . ': *<br><textarea class="map-sff-form-field" type="text" name="link" value="" required></textarea></label>';
+	$html .= '<label>' . esc_html__('Link to external source I', 'map-sff') . ': <br><input type="text" class="map-sff-form-field" name="link" pattern="(www\.)?[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,})+." 
+    title="Enter a valid URL without http or https (e.g., www.example.com or example.com)" placeholder="Enter URL (e.g., www.example.com or example.com)"></label>';
 	
-	$html .= '<label>' . esc_html__('Link to external source II', 'map-sff') . ': *<br><textarea class="map-sff-form-field" type="text" name="other_link" value="" required></textarea></label>';
+	$html .= '<label>' . esc_html__('Link to external source II', 'map-sff') . ': <br><input type="text" class="map-sff-form-field" name="other_link" pattern="(www\.)?[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,})+." 
+    title="Enter a valid URL without http or https (e.g., www.example.com or example.com)" placeholder="Enter URL (e.g., www.example.com or example.com)"></label>';
 
-	$html .= '<label>' . esc_html__('Longitud', 'map-sff') . ': <br><textarea class="map-sff-form-field" type="text" name="longitud" value=""></textarea></label>';
-
-	$html .= '<label>' . esc_html__('Latitud', 'map-sff') . ': <br><textarea class="map-sff-form-field" type="text" name="latitud" value=""></textarea></label>';
-
+	$html .= '<h3>' . esc_html__('Coordinates', 'map-sff') . '</h3>';
+	$html .= '<p>Copy the latitude and longitude from the URL of Google Maps. They are the two numbers separated by a comma. Important: Do not include the comma when pasting the numbers; only paste the number with its corresponding symbol, e.g., <em class="coordinates-hint">-42.1315 or -71.3342</em></p>';
+	
+	$html .= '<div class="gps-fields-container">';
+	$html .= '<label>' . esc_html__('Latitude', 'map-sff') . ': <br><input class="map-sff-form-field latitud" type="text" name="latitud" pattern="^-?([1-8]?[0-9](\.\d+)?|90(\.0+)?)$" title="Enter a valid latitude (-90 to 90)"></label>';
+	$html .= '<label>' . esc_html__('Longitude', 'map-sff') . ': <br><input class="map-sff-form-field longitud" type="text" name="longitud" pattern="^-?(180(\.0+)?|((1[0-7][0-9]|[0-9]{1,2})(\.\d+)?))$" title="Enter a valid longitude (-180 to 180)"></label>';
+	$html .= '</div>';
 
 	$html .= '<input type="submit" value="' . esc_html__('Send', 'map-sff') . '" />';
 	$html .= '<p class="map-sff-response-message"></p>';
@@ -405,19 +396,18 @@ function map_sff_ajax_submit_form() {
 			'map_sff_ajax_submit_form'
 		)
 	) {
-		$name          = ( ! empty( $_POST['name_organization'] ) ) ? sanitize_text_field( wp_unslash( $_POST['name_organization'] ) ) : '';
-		$description   = ( ! empty( $_POST['description'] ) ) ? sanitize_text_field( wp_unslash( $_POST['description'] ) ) : '';
-		// $location      = ( ! empty( $_POST['location'] ) ) ? sanitize_text_field( wp_unslash( $_POST['location'] ) ) : '';
+		$name        = ( ! empty( $_POST['name_organization'] ) ) ? sanitize_text_field( wp_unslash( $_POST['name_organization'] ) ) : '';
+		$description = ( ! empty( $_POST['description'] ) ) ? sanitize_text_field( wp_unslash( $_POST['description'] ) ) : '';
 
-		$country       = ( ! empty( $_POST['country'] ) && is_array( $_POST['country'] ) ) ? array_map( 'sanitize_text_field', $_POST['country'] ) : [];
-		$location       = ( ! empty( $_POST['location'] ) && is_array( $_POST['location'] ) ) ? array_map( 'sanitize_text_field', $_POST['location'] ) : [];
+		$country     = ( ! empty( $_POST['country'] ) && is_array( $_POST['country'] ) ) ? array_map( 'sanitize_text_field', $_POST['country'] ) : [];
+		$location    = ( ! empty( $_POST['location'] ) && is_array( $_POST['location'] ) ) ? array_map( 'sanitize_text_field', $_POST['location'] ) : [];
 		
-		$category 	   = ( ! empty( $_POST['category'] ) ) ? sanitize_text_field( wp_unslash( $_POST['category'] ) ) : '';
-		$link          = ( ! empty( $_POST['link'] ) ) ? sanitize_text_field( wp_unslash( $_POST['link'] ) ) : '';
-		$other_link          = ( ! empty( $_POST['other_link'] ) ) ? sanitize_text_field( wp_unslash( $_POST['other_link'] ) ) : '';
+		$category    = ( ! empty( $_POST['category'] ) ) ? sanitize_text_field( wp_unslash( $_POST['category'] ) ) : '';
+		$link        = ( ! empty( $_POST['link'] ) ) ? sanitize_text_field( wp_unslash( $_POST['link'] ) ) : '';
+		$other_link  = ( ! empty( $_POST['other_link'] ) ) ? sanitize_text_field( wp_unslash( $_POST['other_link'] ) ) : '';
 
-		$latitud       = ( ! empty( $_POST['latitud'] ) ) ? sanitize_text_field( wp_unslash( $_POST['latitud'] ) ) : '';
-		$longitud      = ( ! empty( $_POST['longitud'] ) ) ? sanitize_text_field( wp_unslash( $_POST['longitud'] ) ) : '';
+		$latitud     = ( ! empty( $_POST['latitud'] ) ) ? sanitize_gps_coordinates( sanitize_text_field( wp_unslash( $_POST['latitud'] ) ) ) : '';
+		$longitud    = ( ! empty( $_POST['longitud'] ) ) ? sanitize_gps_coordinates( sanitize_text_field( wp_unslash( $_POST['longitud'] ) ) ) : '';
 
 		if ( $name && $description && $location && $country) {
 			$response['post_insertion'] = wp_insert_post(
@@ -427,7 +417,6 @@ function map_sff_ajax_submit_form() {
 					'post_status' => 'draft',
 					'meta_input'  => array(
 						'map_sff_meta_box_description'    => $description,
-						// 'map_sff_meta_box_location'       => $location,
 						'map_sff_meta_box_country'        => implode( ',', $country ),
 						'map_sff_meta_box_location'        => implode( ',', $location ),
 						'map_sff_meta_box_category'       => $category,
@@ -1149,3 +1138,21 @@ add_shortcode(
 		return $html;
 	}
 );
+
+function sanitize_gps_coordinates( $coordinate, $type = 'lat' ) {
+	$coordinate = sanitize_text_field( wp_unslash( $coordinate ) );
+
+	if ( $type === 'lat' ) {
+		if ( preg_match( '/^-?([1-8]?[0-9](\.\d+)?|90(\.0+)?)$/', $coordinate ) ) {
+			return $coordinate;
+		}
+	}
+
+	if ( $type === 'long' ) {
+		if ( preg_match( '/^-?(180(\.0+)?|((1[0-7][0-9]|[0-9]{1,2})(\.\d+)?))$/', $coordinate ) ) {
+			return $coordinate;
+		}
+	}
+
+	return '';
+}
