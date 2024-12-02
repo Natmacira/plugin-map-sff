@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Custom Map 
- * Version:     0.3.2
+ * Version:     0.3.3
  * Description: Plugin para mapas
  * Author:      Natalia Ciraolo & Lucía Cáceres 
  * License:     GPL v2 or later
@@ -10,7 +10,7 @@
 
 
 if ( ! defined( 'MAPA_FEDERAL_VERSION' ) ) {
-	define( 'MAPA_FEDERAL_VERSION', '0.3.2' );
+	define( 'MAPA_FEDERAL_VERSION', '0.3.3' );
 }
 
 require plugin_dir_path( __FILE__ ) . '/inc/include.php';

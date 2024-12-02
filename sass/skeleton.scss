@@ -122,16 +122,25 @@ section.centre-map-container {
 					}
 
 					&.see-more {
-						color: white;
-						background-color: black;
+						cursor: pointer;
+						background-color: #124850;
+						border-color: #124850;
 						border-radius: 100px;
 						border: none;
-						padding: 8px 32px;
-						display: inline-block;
-						left: 50%;
-						position: relative;
-						transform: translateX(-50%);
-						margin: 10px auto 0;
+						color: #d69b41;
+						display: block;
+						font-family: $theme-font-1;
+						font-size: 16px;
+						padding: 16px 0;
+						text-align: center;
+						width: 135px;
+						margin: 0 auto;
+						margin-top: 17px;
+					
+						&:hover {
+							background: $theme-yellow;
+							color: $theme-green;
+						}
 					}
 				}
 			}
