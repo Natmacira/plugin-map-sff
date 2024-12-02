@@ -461,10 +461,10 @@ function map_sff_ajax_submit_form() {
 	do_action( 'map_sff_after_form_data_processing' );
 
 	if ( $response['post_insertion'] ) {
-		$response['message'] = __( 'Gracias por tu aporte!', 'map-sff' );
+		$response['message'] = __( 'Thank you for your contribution!', 'map-sff' );
 		wp_send_json_success( $response );
 	} else {
-		$response['message'] = ! empty( $error_message ) ? $error_message : __( 'No pudimos cargar tu aporte en la base de datos, por favor intentalo más tarde o ponete en contacto con nosotres.', 'map-sff' );
+		$response['message'] = ! empty( $error_message ) ? $error_message : __( 'We coul not save your submission to the database. Please try again later or contact us for assistance.', 'map-sff' );
 		wp_send_json_error( $response );
 	}
 }

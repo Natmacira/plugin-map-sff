@@ -3,10 +3,11 @@
 	margin: 0 auto;
 }
 
-.map-sff-ajax-form p{
+.map-sff-ajax-form p {
 	color: black;
 }
-.map-sff-ajax-form p.inline{
+
+.map-sff-ajax-form p.inline {
 	display: inline;
 	margin-right: 15px;
 	margin-bottom: 15px;
@@ -20,8 +21,8 @@
 
 .map-sff-ajax-form button {
 	border: solid 1px #D69B41;
-    border-radius: 7px;
-    padding: 8px;
+	border-radius: 7px;
+	padding: 8px;
 	background-color: white;
 	margin-bottom: 25px;
 }
@@ -48,7 +49,8 @@
 	align-items: baseline;
 	justify-content: space-between;
 }
-.map-sff-ajax-form label.radio input{
+
+.map-sff-ajax-form label.radio input {
 	width: auto;
 	border: solid 1px #D69B41;
 	accent-color: #D69B41;
@@ -110,6 +112,15 @@
 
 .map-sff-ajax-form {
 	background-color: white;
+	padding: 8px;
+}
+
+@media (min-width: 1200px) {
+
+	.map-sff-ajax-form {
+		background-color: white;
+		padding: 50px;
+	}
 }
 
 .map-sff-ajax-form h1 {
