@@ -69,18 +69,19 @@ section.centre-map-container {
 		div.leaflet-popup-content-wrapper {
 			color: black;
 			max-width: calc(100vw - 80px);
+			max-height: 350px;
+			overflow-y: auto;
+			overflow-x: hidden;
+			padding-bottom: 15px;
 
 			div.leaflet-popup-content {
 				h4,
 				p {
 					margin: 0;
-					max-height: 300px;
-					overflow-y: auto;
-					overflow-x: hidden;
 				}
 
 				h4 {
-					font-size: 32px;
+					font-size: 24px;
 					line-height: 1;
 					color: #000;
 					padding-right: 12px;
