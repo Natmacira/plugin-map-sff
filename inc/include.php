@@ -68,12 +68,12 @@ function map_sff_generate_form()
 	$html .= '</div>';  
 	$html .= '</details>';
 
-	$html .= '<h3>' . esc_html__('Category', 'map-sff') . ': *</h3>';
-	$html .= '<div class="form-radio-container">';
-	$html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="category[]" value="Resistance" required>Resistance</label>';
-	$html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="category[]" value="Refusal">Refusal</label>';
-	$html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="category[]" value="Both">Both</label>';
-	$html .= '</div>';
+	// $html .= '<h3>' . esc_html__('Category', 'map-sff') . ': *</h3>';
+	// $html .= '<div class="form-radio-container">';
+	// $html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="category[]" value="Resistance" required>Resistance</label>';
+	// $html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="category[]" value="Refusal">Refusal</label>';
+	// $html .= '<label class="radio"><input class="map-sff-form-field" type="radio" name="category[]" value="Both">Both</label>';
+	// $html .= '</div>';
 	
 	$html .= '<label>' . esc_html__('Link to external source I', 'map-sff') . ': <br><input type="text" class="map-sff-form-field" name="link" pattern="(www\.)?[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,})+." 
     title="Enter a valid URL without http or https (e.g., www.example.com or example.com)" placeholder="Enter URL (e.g., www.example.com or example.com)"></label>';
@@ -81,13 +81,13 @@ function map_sff_generate_form()
 	$html .= '<label>' . esc_html__('Link to external source II', 'map-sff') . ': <br><input type="text" class="map-sff-form-field" name="other_link" pattern="(www\.)?[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,})+." 
     title="Enter a valid URL without http or https (e.g., www.example.com or example.com)" placeholder="Enter URL (e.g., www.example.com or example.com)"></label>';
 
-	$html .= '<h3>' . esc_html__('Coordinates', 'map-sff') . '</h3>';
-	$html .= '<p>Copy the latitude and longitude from the URL of Google Maps. They are the two numbers separated by a comma. Important: Do not include the comma when pasting the numbers; only paste the number with its corresponding symbol, e.g., <em class="coordinates-hint">-42.1315 or -71.3342</em></p>';
+	// $html .= '<h3>' . esc_html__('Coordinates', 'map-sff') . '</h3>';
+	// $html .= '<p>Copy the latitude and longitude from the URL of Google Maps. They are the two numbers separated by a comma. Important: Do not include the comma when pasting the numbers; only paste the number with its corresponding symbol, e.g., <em class="coordinates-hint">-42.1315 or -71.3342</em></p>';
 	
-	$html .= '<div class="gps-fields-container">';
-	$html .= '<label>' . esc_html__('Latitude', 'map-sff') . ': <br><input class="map-sff-form-field latitud" type="text" name="latitud" pattern="^-?([1-8]?[0-9](\.\d+)?|90(\.0+)?)$" title="Enter a valid latitude (-90 to 90)"></label>';
-	$html .= '<label>' . esc_html__('Longitude', 'map-sff') . ': <br><input class="map-sff-form-field longitud" type="text" name="longitud" pattern="^-?(180(\.0+)?|((1[0-7][0-9]|[0-9]{1,2})(\.\d+)?))$" title="Enter a valid longitude (-180 to 180)"></label>';
-	$html .= '</div>';
+	// $html .= '<div class="gps-fields-container">';
+	// $html .= '<label>' . esc_html__('Latitude', 'map-sff') . ': <br><input class="map-sff-form-field latitud" type="text" name="latitud" pattern="^-?([1-8]?[0-9](\.\d+)?|90(\.0+)?)$" title="Enter a valid latitude (-90 to 90)"></label>';
+	// $html .= '<label>' . esc_html__('Longitude', 'map-sff') . ': <br><input class="map-sff-form-field longitud" type="text" name="longitud" pattern="^-?(180(\.0+)?|((1[0-7][0-9]|[0-9]{1,2})(\.\d+)?))$" title="Enter a valid longitude (-180 to 180)"></label>';
+	// $html .= '</div>';
 
 	$html .= '<input type="submit" value="' . esc_html__('Send', 'map-sff') . '" />';
 	$html .= '<p class="map-sff-response-message"></p>';
@@ -732,6 +732,22 @@ add_shortcode(
 		wp_localize_script('map-sff-entries-map', 'centresAll', $centres);
 
 		$html  = '';
+
+		$html .= '<div class="centre-map-container-inner-div" >';
+
+		$html .= '<h1>Our Stories of Resistance And Strategies for Change</h1>';
+
+		$html .= '<h4>Interactive Map of Stories of Feminist Resistance</h4>';
+
+		$html .= '<p>Across the world, feminist movements are building transformative solutions to our most pressing challenges. From Indigenous women protecting ancestral lands in West Papua to queer activists reimagining community care in Lebanon, from environmental defenders in Tanzania to feminist organisers transforming politics in Brazil, communities are not just resisting oppression – they are actively creating alternative futures.
+
+				  This map documents powerful stories of feminist organising across the Global South. Each point represents a community challenging interconnected systems of capitalism, patriarchy, racism, and colonialism whilst building new ways of living and being. You will discover how movements are developing innovative approaches to environmental protection, economic justice, collective care, and political transformation.
+
+				  Explore the map to learn how women-led democratic confederalism is transforming governance in Kurdistan, how Indigenous communities are protecting traditional knowledge and territories, and how feminist movements are building cross-border solidarity networks. These stories show us that another world is not only possible – it is already being created.
+
+				  Click on any point to dive deeper into these stories of transformation. Use the filters to explore different themes, from environmental justice to cultural resistance, from community care to economic alternatives. As you navigate the map, you will uncover the threads that connect these diverse movements in their shared vision for feminist futures.</p>';
+	
+		$html .= '</div>';
 		$html .= '<section class="centre-map-container">';
 
 		$html .= '<div id="filter-btn-container"><button class="filter-btn">OPEN FILTERS</button></div>';
@@ -1129,10 +1145,21 @@ add_shortcode(
 
 		$html .= '<h3>Shared stories</h3>';
 
-		$html .= '<a class="how-btn" href=" ' .esc_url( home_url( '/how-to-use-the-map' ) )  . ' " target="_blank">How to use the map?</a>';
+		$html .= '<div class="centre-count-container-inner-div" >';
 
+		$html .= '<h4>About this stories</h4>';
+
+		$html .= '<p>These stories were collected through extensive consultations with feminist movements and organisations during the Manifesto Week gatherings in August 2024. Movement leaders, community organisers, and activists from across the Global South shared their experiences of resistance and transformation through direct testimony. Additional stories come from ongoing documentation by feminist researchers and allied organisations.</p>';
+
+		$html .= '<h4>Share Your Story</h4>';
+
+		$html .= '<p>This map is a living archive of feminist resistance and creation. If your movement or community is working to build feminist futures, we invite you to share your story using the submission form below. Together, we can make visible the powerful ways that feminist movements are transforming our world.</p>';
+	
+		$html .= '</div>';
+				
 		$html .= '<a class="filter-btn" href=" ' .esc_url( home_url( '/share-your-story' ) )  . ' " target="_blank">Add your story</a>';
-
+		
+		$html .= '<a class="how-btn" href=" ' .esc_url( home_url( '/how-to-use-the-map' ) )  . ' " target="_blank">How to use the map?</a>';
 
 		$html .= '</section>';
 
