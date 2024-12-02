@@ -715,3 +715,40 @@ section.centre-map-container form#map-sff-filters label.standalone-input-label {
 }
 
 
+a.filter-btn {
+	cursor: pointer;
+	background-color: #124850;
+	border-color: #124850;
+	border-radius: 100px;
+	border: none;
+	color: #d69b41;
+	display: block;
+	font-family: $theme-font-1;
+	font-size: 20px;
+	padding: 16px 0;
+	text-align: center;
+	width: 300px;
+	margin: 0 auto;
+
+	&:hover {
+		background: $theme-yellow;
+		color: $theme-green;
+	}
+}
+
+a.how-btn {
+	cursor: pointer;
+	border: none;
+	color: black;
+	display: block;
+	font-family: $theme-font-2;
+	font-size: 34px;
+	padding: 24px 0;
+	text-align: center;
+	margin: 0 auto;
+	text-decoration: underline;
+
+	&:hover {
+		color: $theme-green;
+	}
+}

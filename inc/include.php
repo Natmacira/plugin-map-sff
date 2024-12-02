@@ -1129,9 +1129,10 @@ add_shortcode(
 
 		$html .= '<h3>Shared stories</h3>';
 
-		// $html .= '<a class="button-link form-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdMk_RuMv0kQ_Ddld6wC2UpKrRSQdK0S3aRy0RGA7ykjMM8mQ/viewform" target="_blank">Suma tu espacio</a>';
+		$html .= '<a class="how-btn" href=" ' .esc_url( home_url( '/how-to-use-the-map' ) )  . ' " target="_blank">How to use the map?</a>';
 
-		// $html .= '<h4>Carga los datos de tu espacio para que aparezca en el mapa</h4>';
+		$html .= '<a class="filter-btn" href=" ' .esc_url( home_url( '/share-your-story' ) )  . ' " target="_blank">Add your story</a>';
+
 
 		$html .= '</section>';
 
